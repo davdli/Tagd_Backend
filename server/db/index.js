@@ -1,14 +1,17 @@
-//this is the access point for all things database related!
+const db = require("../db");
+const User = require("./models/User");
+const Location = require("./models/Location");
+const Tag = require("./models/Tag");
+const Host = require("./models/Host");
 
-const db = require('./db')
+// ASSOCIATIONS
+Tag.belongsTo(Location, { through: 'location_tag' }) // 1-1
+Location.belongsToMany(Tag, { through: 'location_tag' }) // 1-n
 
-const User = require('./models/User')
-
-//associations could go here!
+Host.belongsToMany(Location, { through: 'host_location' })  // 1-n
+Location.belongsTo(Host, { through: 'host_location' }) // 1-1
 
 module.exports = {
   db,
-  models: {
-    User,
-  },
-}
+  models: { User, Location, Tag, Host },
+};
