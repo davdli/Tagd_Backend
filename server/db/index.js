@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("./db");
 const Host = require("./models/Host");
 const User = require("./models/User");
 const Location = require("./models/Location");
