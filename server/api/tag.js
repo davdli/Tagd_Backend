@@ -2,8 +2,6 @@ const router = require('express').Router();
 const Sequelize = require('sequelize');
 const { models: { Tag, Location } } = require('../db');
 
-module.exports = router;
-
 // Get all tags
 router.get('/', async (req, res, next) => {
     try {
@@ -58,3 +56,5 @@ router.route('/:locationId')
             next(error);
         }
     });
+
+module.exports = router;
