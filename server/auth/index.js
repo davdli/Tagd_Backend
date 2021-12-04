@@ -1,13 +1,19 @@
 const router = require("express").Router();
 const {
-  models: { User },
+  models: { User, Host },
 } = require("../db");
 
 
 router.post("/login", async (req, res, next) => {
   try {
-    const loginInfo = { email: req.body.email, password: req.body.password }
-    res.send({ token: await User.authenticate(loginInfo) });
+    const loginInfo = { email: req.body.email, password: req.body.password };
+    let token = await User.authenticate(loginInfo);
+    if (token) {
+      res.send({ user: User.findByToken(token) });
+    } else {
+      let token = await Host.authenticate(loginInfo);
+      res.send({ user: Host.findByToken(token) });
+    }
   } catch (err) {
     next(err);
   }
