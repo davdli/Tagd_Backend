@@ -7,17 +7,12 @@ const {
 router.post("/login", async (req, res, next) => {
   try {
     const loginInfo = { email: req.body.email, password: req.body.password };
-    const userToken = await User.authenticate(loginInfo);
-    const hostToken = await Host.authenticate(loginInfo);
-    if (userToken) {
-      res.send({ user: await User.findByToken(userToken) });
+    let token = await User.authenticate(loginInfo);
+    if (token !== "Incorrect username/password") {
+      res.send({ user: await User.findByToken(token) });
     } else {
-      console.log('Incorrect username/password')
-    }
-    if (hostToken) {
-      res.send({ user: await Host.findByToken(hostToken) });
-    } else {
-      console.log('Incorrect username/password')
+      let token = await Host.authenticate(loginInfo);
+      res.send({ user: await Host.findByToken(token) });
     }
   } catch (err) {
     next(err);
