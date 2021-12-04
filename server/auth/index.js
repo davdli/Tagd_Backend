@@ -21,15 +21,25 @@ router.post("/login", async (req, res, next) => {
 router.post("/signup", async (req, res, next) => {
   try {
     //this is done to protect against injection attacks, so they can't change the type
-    const { firstName, lastName, password, email } = req.body;
+    const { firstName, lastName, password, email, userType } = req.body;
 
-    const user = await User.create({
-      firstName,
-      lastName,
-      password,
-      email
-    });
-    res.send({ token: await user.generateToken() });
+    if (userType === 'guest') {
+      const user = await User.create({
+        firstName,
+        lastName,
+        password,
+        email
+      });
+      res.send({ token: await user.generateToken() });
+    } else {
+      const host = await Host.create({
+        firstName,
+        lastName,
+        password,
+        email
+      });
+      res.send({ token: await host.generateToken() });
+    }
   } catch (err) {
     if (err.name === "SequelizeUniqueConstraintError") {
       res.status(401).send("User already exists");
