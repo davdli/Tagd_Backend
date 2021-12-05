@@ -12,7 +12,7 @@ router.post("/login", async (req, res, next) => {
       res.send({ user: await User.findByToken(token) });
     } else {
       let token = await Host.authenticate(loginInfo);
-      res.send({ user: await Host.findByToken(token) });
+      res.send({ host: await Host.findByToken(token) });
     }
   } catch (err) {
     next(err);
