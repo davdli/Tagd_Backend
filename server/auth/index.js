@@ -31,7 +31,7 @@ router.post("/signup", async (req, res, next) => {
         email
       });
       let token = await user.generateToken()
-      res.send({ guest: await User.findByToken(token) });
+      res.send({ user: await User.findByToken(token) });
     } else {
       const host = await Host.create({
         firstName,
