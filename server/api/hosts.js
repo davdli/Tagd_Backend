@@ -2,7 +2,6 @@ const router = require('express').Router();
 const Sequelize = require('sequelize');
 const { models: { Host, Tag } } = require('../db');
 
-// all hosts
 router.get('/', async (req, res, next) => {
   try {
     const hosts = await Host.findAll({
