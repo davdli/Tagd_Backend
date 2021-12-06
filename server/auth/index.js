@@ -30,7 +30,8 @@ router.post("/signup", async (req, res, next) => {
         password,
         email
       });
-      res.send({ token: await user.generateToken() });
+      let token = await user.generateToken()
+      res.send({ guest: await User.findByToken(token) });
     } else {
       const host = await Host.create({
         firstName,
@@ -38,7 +39,8 @@ router.post("/signup", async (req, res, next) => {
         password,
         email
       });
-      res.send({ token: await host.generateToken() });
+      let token = await host.generateToken()
+      res.send({ host: await Host.findByToken(token) });
     }
   } catch (err) {
     if (err.name === "SequelizeUniqueConstraintError") {
