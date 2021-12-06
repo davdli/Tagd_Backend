@@ -9,12 +9,12 @@ const Location = db.define("location", {
       notEmpty: true,
     },
   },
-  houseImg: {
+  key: {
     type: Sequelize.STRING,
     allowNull: false,
+    unique: true,
     validate: {
       notEmpty: true,
-      isUrl: true,
     },
   }
 })
