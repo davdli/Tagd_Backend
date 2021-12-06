@@ -87,19 +87,19 @@ const tagsData = [
 const locationsData = [
   {
     name: 'TaiHome',
-    houseImg: 'https://media.istockphoto.com/photos/playing-card-two-of-clubs-picture-id149138132?k=20&m=149138132&s=612x612&w=0&h=RiFclzYIk14Dcp9aBG5DFGOEp5cr2birsxH-lWIy758=',
+    key: 'taisecret',
   },
   {
     name: 'DavidHome',
-    houseImg: 'https://media.istockphoto.com/photos/playing-card-two-of-hearts-picture-id166089272?k=20&m=166089272&s=612x612&w=0&h=zODXUL-8g-CyRao9P2yO1ESSxnBc7EOminanb9sjctY=',
+    key: 'davidsecret',
   },
   {
     name: 'GregHome',
-    houseImg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/1200px-Playing_card_spade_2.svg.png',
+    key: 'gregsecret',
   },
   {
     name: 'TonyHome',
-    houseImg: 'https://media.istockphoto.com/photos/playing-card-two-of-hearts-picture-id166089272?k=20&m=166089272&s=612x612&w=0&h=zODXUL-8g-CyRao9P2yO1ESSxnBc7EOminanb9sjctY='
+    key: 'tonysecret'
   }
 ]
 
@@ -173,7 +173,7 @@ async function runSeed() {
   } catch (err) {
     console.error(err)
     process.exitCode = 1
-    }
+  }
 }
 
 // Execute the `seed` function, IF we ran this module directly (`node seed`).
