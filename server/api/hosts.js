@@ -1,12 +1,15 @@
 const router = require('express').Router();
 const Sequelize = require('sequelize');
-const { models: { Host } } = require('../db');
+const { models: { Host, Tag } } = require('../db');
 
 // all hosts
-router.get( '/', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     const hosts = await Host.findAll({
-      attributes: ['firstName', 'lastName', 'email']
+      attributes: ['firstName', 'lastName', 'email'],
+      include: [{
+        model: Tag
+      }]
     });
     res.send(hosts);
   } catch (error) {
@@ -16,7 +19,12 @@ router.get( '/', async (req, res, next) => {
 router.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const host = await Host.findByPk(req.params.id);
+      const host = await Host.findOne({
+        include: Tag,
+        where: {
+          id: req.params.id
+        }
+      });
       if (host) {
         res.json(host);
       } else {
