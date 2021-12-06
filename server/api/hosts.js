@@ -68,6 +68,5 @@ router.route('/:id')
       next(error)
     }
   })
-})
 
 module.exports = router;
