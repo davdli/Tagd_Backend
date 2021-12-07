@@ -6,11 +6,14 @@ const Tag = require("./models/Tag");
 
 
 // ASSOCIATIONS
-Tag.belongsTo(Location, { through: 'location_tag' }) // 1-1
-Location.belongsToMany(Tag, { through: 'location_tag' }) // 1-n
+Host.belongsToMany(Tag, {through: 'host_tag'});
+Tag.belongsToMany(Host, {through: 'host_tag'});
 
-Host.belongsToMany(Location, { through: 'host_location' })  // 1-n
-Location.belongsTo(Host, { through: 'host_location' }) // 1-1
+Tag.belongsTo(Location, { through: 'location_tag' })
+Location.belongsToMany(Tag, { through: 'location_tag' })
+
+Host.belongsToMany(Location, { through: 'host_location' })
+Location.belongsTo(Host, { through: 'host_location' })
 
 module.exports = {
   db,

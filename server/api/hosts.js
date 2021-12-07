@@ -1,31 +1,30 @@
 const router = require('express').Router();
 const Sequelize = require('sequelize');
-const { models: { Host } } = require('../db');
+const { models: { Host, Tag } } = require('../db');
 
-// all hosts
-router.route('/')
-  .get(async (req, res, next) => {
-    try {
-      const hosts = await Host.findAll({
-        attributes: ['firstName', 'lastName', 'email']
-      });
-      res.send(hosts);
-    } catch (error) {
-      next(error);
-    }
-  }).post(async (req, res, next) => {
-    try {
-      const newHost = await Host.create(req.body);
-      res.status(200).json(newHost);
-    } catch (error) {
-      next(error);
-    }
-  });
+router.get('/', async (req, res, next) => {
+  try {
+    const hosts = await Host.findAll({
+      attributes: ['firstName', 'lastName', 'email'],
+      include: [{
+        model: Tag
+      }]
+    });
+    res.send(hosts);
+  } catch (error) {
+    next(error);
+  }
+};
 
 router.route('/:id')
   .get(async (req, res, next) => {
     try {
-      const host = await Host.findByPk(req.params.id);
+      const host = await Host.findOne({
+        include: Tag,
+        where: {
+          id: req.params.id
+        }
+      });
       if (host) {
         res.json(host);
       } else {
@@ -68,5 +67,13 @@ router.route('/:id')
       next(error)
     }
   })
+  .post(async (req, res, next) => {
+    try {
+      const newHost = await Host.create(req.body);
+      res.status(200).json(newHost);
+    } catch (error) {
+      next(error);
+    }
+  });
 
 module.exports = router;
