@@ -103,6 +103,21 @@ const locationsData = [
   }
 ]
 
+// const cards = [
+//   {
+//     card: 'two of clubs',
+//     image: 'https://media.istockphoto.com/photos/playing-card-two-of-clubs-picture-id149138132?k=20&m=149138132&s=612x612&w=0&h=RiFclzYIk14Dcp9aBG5DFGOEp5cr2birsxH-lWIy758='
+//   },
+//   {
+//     card: 'two of hearts',
+//     image: 'https://media.istockphoto.com/photos/playing-card-two-of-hearts-picture-id166089272?k=20&m=166089272&s=612x612&w=0&h=zODXUL-8g-CyRao9P2yO1ESSxnBc7EOminanb9sjctY='
+//   },
+//   {
+//     card: 'two of spades',
+//     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/1200px-Playing_card_spade_2.svg.png'
+//   }
+// ]
+
 async function seed() {
   await db.sync({ force: true });
   console.log('db synced!');
@@ -131,10 +146,7 @@ async function seed() {
     })
   );
 
-  await hosts[0].addTag(tags[0])
-  await hosts[1].addTag(tags[1])
-  await hosts[2].addTag(tags[2])
-  await hosts[3].addTag(tags[3])
+
 
   locations[0].addTag(tags[0])
   locations[1].addTag(tags[1])
