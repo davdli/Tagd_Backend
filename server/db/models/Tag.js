@@ -22,10 +22,7 @@ const Tag = db.define("tag", {
   },
   position: {
     type: Sequelize.ARRAY(Sequelize.DECIMAL),
-    allowNull: false,
-    validate: {
-      notEmpty: true
-    }
+    value: [0, 0, -1],
   },
 })
 
