@@ -51,7 +51,7 @@ router.route('/:locationId')
             const location = await Location.findByPk(req.params.locationId)
             console.log(req.body)
             const tag = {
-                title: req.body,
+                title: JSON.stringify(req.body),
                 description: "tony",
                 imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/1200px-Playing_card_spade_2.svg.png"
             }
