@@ -3,6 +3,7 @@ const db = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const axios = require("axios");
+const Location = require("./Location");
 
 const SALT_ROUNDS = 5;
 
@@ -88,6 +89,12 @@ const hashPassword = async host => {
     }
 };
 
+const createHostLocation = async host => {
+    let hostLocation = await Location.create({ name: `${host.firstName}'s Location`, key: `${host.firstName}secret` })
+    host.addLocation(hostLocation)
+}
+
 Host.beforeCreate(hashPassword);
 Host.beforeUpdate(hashPassword);
 Host.beforeBulkCreate(hosts => Promise.all(hosts.map(hashPassword)));
+Host.afterCreate(createHostLocation);
