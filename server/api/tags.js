@@ -49,7 +49,14 @@ router.route('/:locationId')
         //Create a single tag
         try {
             const location = await Location.findByPk(req.params.locationId)
-            const newTag = await Tag.create(req.body);
+            console.log(req.body)
+            const tag = {
+                title: "tony",
+                description: "testtag",
+
+                imageUrl: "https://media.istockphoto.com/photos/playing-card-ace-of-spades-picture-id166086175?k=20&m=166086175&s=612x612&w=0&h=07Kyk1dMYcgi_UPUKnSsv-mkZ1wg6UIlQRIoyAtyq2I="
+            }
+            const newTag = await Tag.create(tag);
             location.addTag(newTag);
             res.status(200).send(newTag);
         } catch (error) {
