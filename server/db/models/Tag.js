@@ -22,7 +22,7 @@ const Tag = db.define("tag", {
   },
   position: {
     type: Sequelize.ARRAY(Sequelize.DECIMAL),
-    value: [0, 0, -1],
+    defaultValue: [0, 0, -1],
   },
 })
 
