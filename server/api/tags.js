@@ -51,10 +51,10 @@ router.route('/:locationId')
             const location = await Location.findByPk(req.params.locationId)
             console.log(req.body)
             const tag = {
-                title: "tony",
-                description: "testtag",
+                title: req.body.title,
+                description: req.body.description,
 
-                imageUrl: "https://media.istockphoto.com/photos/playing-card-ace-of-spades-picture-id166086175?k=20&m=166086175&s=612x612&w=0&h=07Kyk1dMYcgi_UPUKnSsv-mkZ1wg6UIlQRIoyAtyq2I="
+                imageUrl: req.body.imageUrl
             }
             const newTag = await Tag.create(tag);
             location.addTag(newTag);
