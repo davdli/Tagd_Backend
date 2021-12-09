@@ -51,13 +51,25 @@ router.route('/:locationId')
             const location = await Location.findByPk(req.params.locationId)
             console.log(req.body)
             const tag = {
-                title: JSON.stringify(req.body),
-                description: "tony",
-                imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Playing_card_spade_2.svg/1200px-Playing_card_spade_2.svg.png"
+                title: req.body.title,
+                description: req.body.description,
+                imageUrl: req.body.imageUrl
             }
             const newTag = await Tag.create(tag);
             location.addTag(newTag);
             res.status(200).send(newTag);
+        } catch (error) {
+            next(error);
+        }
+    });
+
+router.route('/:locationId/tags')
+    .get(async (req, res, next) => {
+        //get tags for location
+        try {
+            const location = await Location.findByPk(req.params.locationId)
+            let locationTags = location.getTags();
+            res.status(200).send(locationTags);
         } catch (error) {
             next(error);
         }
