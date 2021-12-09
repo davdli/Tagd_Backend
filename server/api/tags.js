@@ -52,9 +52,8 @@ router.route('/:locationId')
             console.log(req.body)
             const tag = {
                 title: req.body.title,
-                description: req.body.description,
-
-                imageUrl: req.body.imageUrl
+                description: "tony",
+                imageUrl: "tony"
             }
             const newTag = await Tag.create(tag);
             location.addTag(newTag);
