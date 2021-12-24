@@ -59,27 +59,21 @@ const hostData = [
 
 const tagsData = [
   {
-    title: 'Spade',
-    description: 'Ace of spades',
-    imageUrl: "https://media.istockphoto.com/photos/playing-card-ace-of-spades-picture-id166086175?k=20&m=166086175&s=612x612&w=0&h=07Kyk1dMYcgi_UPUKnSsv-mkZ1wg6UIlQRIoyAtyq2I=",
-    position: [0, 0, -1],
-  },
-  {
-    title: 'Heart',
-    description: 'Ace of hearts',
-    imageUrl: "https://media.istockphoto.com/photos/ace-of-hearts-playing-card-on-white-background-picture-id166089289?k=20&m=166089289&s=612x612&w=0&h=IdC9kvm9EyDUXNL1IyGA6Rl-5qnLTeBVl-oifUSFJL8=",
-    position: [0, 0, -1],
-  },
-  {
-    title: 'Diamonds',
-    description: 'Ace of diamonds',
-    imageUrl: "https://media.istockphoto.com/photos/ace-of-diamonds-picture-id624179566?k=20&m=624179566&s=612x612&w=0&h=Bcr-s_68-xOY2kKljKS0zW7Zi3fcnwCRgQHCMRpUQk0=",
+    title: 'Clubs',
+    description: 'King Of Clubs',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/kk.png?ezimgfmt=ng:webp/ngcb13",
     position: [0, 0, -1],
   },
   {
     title: 'Clubs',
-    description: 'Ace of clubs',
-    imageUrl: "https://media.istockphoto.com/photos/playing-card-ace-of-clubs-picture-id164002847?k=20&m=164002847&s=612x612&w=0&h=g9focAcWYb3AnziyyV_KE6K66fR6sCvlmEZkuJ-c0qE=",
+    description: 'Queen Of Clubs',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/kq.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Clubs',
+    description: 'Jack Of Clubs',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/kj.png?ezimgfmt=ng:webp/ngcb13",
     position: [0, 0, -1],
   },
 ]
