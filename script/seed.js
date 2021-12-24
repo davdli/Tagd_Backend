@@ -59,21 +59,81 @@ const hostData = [
 
 const tagsData = [
   {
-    title: 'Clubs',
-    description: 'King Of Clubs',
-    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/kk.png?ezimgfmt=ng:webp/ngcb13",
+    title: 'Spades',
+    description: 'King Of Spades',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/pk.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Spades',
+    description: 'Queen Of Spades',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/pq.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Spades',
+    description: 'Jack Of Spades',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/pj.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Hearts',
+    description: 'Ten Of Hearts',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/s10.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Hearts',
+    description: 'Nine Of Hearts',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/s9.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Hearts',
+    description: 'Eight Of Hearts',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/s8.png?ezimgfmt=ng:webp/ngcb13",
     position: [0, 0, -1],
   },
   {
     title: 'Clubs',
-    description: 'Queen Of Clubs',
-    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/kq.png?ezimgfmt=ng:webp/ngcb13",
+    description: 'Seven Of Clubs',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/k7.png?ezimgfmt=ng:webp/ngcb13",
     position: [0, 0, -1],
   },
   {
     title: 'Clubs',
-    description: 'Jack Of Clubs',
-    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/kj.png?ezimgfmt=ng:webp/ngcb13",
+    description: 'Six Of Clubs',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/k6.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Clubs',
+    description: 'Five Of Clubs',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/k5.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Diamonds',
+    description: 'Four Of Diamonds',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/l4.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Diamonds',
+    description: 'Three Of Diamonds',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/l3.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Diamonds',
+    description: 'Two Of Diamonds',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/l2.png?ezimgfmt=ng:webp/ngcb13",
+    position: [0, 0, -1],
+  },
+  {
+    title: 'Diamonds',
+    description: 'Ace Of Diamonds',
+    imageUrl: "https://www.improvemagic.com/wp-content/uploads/2020/11/la.png?ezimgfmt=ng:webp/ngcb13",
     position: [0, 0, -1],
   },
 ]
