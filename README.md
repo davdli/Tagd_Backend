@@ -1,5 +1,5 @@
 # Tagd
-Tagd is an augmented reality mobile application that allows hosts to create and display personalized messages to help guests access and locate necessities in and around their property.
+Tagd is an augmented reality mobile application that allow hosts to create and display personalized messages to help guests access and locate necessities in and around their property.
 
 ## Tech Stack
 - ![Node.js](https://img.shields.io/badge/-Node.js-339933A?logo=node.js&logoColor=white&style=flat)
