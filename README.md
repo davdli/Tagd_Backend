@@ -13,7 +13,7 @@ Tagd is an augmented reality mobile application that allow hosts to create and d
 - ![Heroku](https://img.shields.io/badge/-Heroku-430098?logo=heroku&logoColor=white&style=flat)
 
 ## Setup
-- `git clone git@github.com:davdli/TAGD_Frontend.git` in terminal
+- `git clone git@github.com:davdli/Tagd_Frontend.git` in terminal
 - `npm install` and `npm start` in project root directory
 - Install Viro Media app from App Store or Google Playstore
 - In Viro Media app, click hamburger menu then click Enter Testbed
