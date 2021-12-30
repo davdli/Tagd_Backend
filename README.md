@@ -1,6 +1,22 @@
 # Tagd
 Tagd is an augmented reality mobile application that allow hosts to create and display personalized messages to help guests access and locate necessities in and around their property.
 
+## Preview
+
+Host
+<p float="left">
+<img width='25%' src="public/TagdHostDemo1.gif">
+<img width='25%' src="public/TagdHostDemo2.gif">
+<img width='25%' src="public/TagdHostDemo3.gif">
+</p >
+
+Guest
+<p float="left">
+<img width='25%' src="public/TagdGuestDemo1.gif">
+<img width='25%' src="public/TagdGuestDemo2.gif">
+<img width='25%' src="public/TagdGuestDemo3.gif">
+</p >
+
 ## Tech Stack
 - ![Node.js](https://img.shields.io/badge/-Node.js-339933A?logo=node.js&logoColor=white&style=flat)
 - ![React Native](https://img.shields.io/badge/-React%20Native-61DAFB?logo=react&logoColor=white&style=flat)
